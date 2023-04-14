@@ -25,11 +25,17 @@ interface Paragraph
 const Paragraph = forwardRef<HTMLParagraphElement, Paragraph>(
   ({ className, size, children, ...props }, ref) => {
     return (
-      <p ref={ref} {...props} className={cn()}>
-        paragraph
+      <p
+        ref={ref}
+        {...props}
+        className={cn(paragraphVariants({ size, className }))}
+      >
+        {children}
       </p>
     );
   }
 );
+
+Paragraph.displayName = "Paragraph";
 
 export default Paragraph;
