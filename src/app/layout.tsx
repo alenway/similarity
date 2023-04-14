@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
         <Providers>
           {children}
-
+          {/* @ts-expect-error Server Component */}
           <Navbar />
         </Providers>
         {/* {allow for more height for the mobile device} */}

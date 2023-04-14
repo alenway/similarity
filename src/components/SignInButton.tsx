@@ -14,21 +14,14 @@ const SignInButton: FC<SigninButtonProps> = ({}) => {
     try {
       await signIn("google");
     } catch (error) {
-      toast({
-        title: "Error singin in",
-        message: "Please try again later",
-        error: "error",
-      });
+      //   toast({
+      //     title: "Error singin in",
+      //     message: "Please try again later",
+      //     error: "error",
+      //   });
     }
   };
 
-  return (
-    <Button onClick={signInWithGoogle} isLoading={isLoading}>
-      Sign In
-    </Button>
-  );
+  return <button>button</button>;
 };
 export default SignInButton;
-function toast(arg0: { title: string; message: string; error: string }) {
-  throw new Error("Function not implemented.");
-}
