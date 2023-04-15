@@ -28,7 +28,7 @@ const Paragraph = forwardRef<HTMLParagraphElement, Paragraph>(
       <p
         ref={ref}
         {...props}
-        className={cn(paragraphVariants({ size, className }))}
+        className={cn({ inputs: [paragraphVariants({ size, className })] })}
       >
         {children}
       </p>

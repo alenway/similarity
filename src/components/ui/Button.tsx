@@ -39,7 +39,9 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, variant, isLoading, ...props }, ref) => {
     return (
       <button
-        className={cn(buttonVariants({ variant, size: props.size, className }))}
+        className={cn({
+          inputs: [buttonVariants({ variant, size: props.size, className })],
+        })}
         ref={ref}
         disabled={isLoading}
         {...props}
