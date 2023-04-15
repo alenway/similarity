@@ -1,13 +1,11 @@
 "use client";
-
-import { Session } from "inspector";
 import { ThemeProvider } from "next-themes";
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 
 const Providers = ({ children }: { children: ReactNode }) => {
   return (
-    <ThemeProvider attribute="class" defaultTheme="syetem" enableColorScheme>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <SessionProvider>{children}</SessionProvider>
     </ThemeProvider>
   );

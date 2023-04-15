@@ -22,6 +22,10 @@ const SignOutButton: FC<SignOutButtonProps> = ({}) => {
     }
   };
 
-  return <button>button out</button>;
+  return (
+    <Button onClick={signUserOut} isLoading={isLoading}>
+      Sign out
+    </Button>
+  );
 };
 export default SignOutButton;

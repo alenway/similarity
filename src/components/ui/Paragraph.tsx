@@ -17,18 +17,17 @@ const paragraphVariants = cva(
   }
 );
 
-interface Paragraph
+interface ParagraphProps
   extends HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof paragraphVariants> {}
 
-// eslint-disable-next-line react/display-name
-const Paragraph = forwardRef<HTMLParagraphElement, Paragraph>(
+const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
       <p
         ref={ref}
         {...props}
-        className={cn({ inputs: [paragraphVariants({ size, className })] })}
+        className={cn(paragraphVariants({ size, className }))}
       >
         {children}
       </p>

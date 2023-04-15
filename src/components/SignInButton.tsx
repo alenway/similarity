@@ -1,5 +1,4 @@
 "use client";
-
 import { signIn } from "next-auth/react";
 import { FC, useState } from "react";
 import Button from "./ui/Button";
@@ -22,6 +21,10 @@ const SignInButton: FC<SigninButtonProps> = ({}) => {
     }
   };
 
-  return <button>button</button>;
+  return (
+    <Button onClick={signInWithGoogle} isLoading={isLoading}>
+      Sign in
+    </Button>
+  );
 };
 export default SignInButton;

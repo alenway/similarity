@@ -11,7 +11,7 @@ export const buttonVariants = cva(
         default:
           "bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100",
         outline:
-          "bg-slate-900 text-white hover:bg-slate-900 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100 border border-slate-200 hover:bg-slate-100 dark:border-slate-7000",
+          "bg-slate-900 text-white hover:bg-slate-900 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100 border border-slate-200 hover:bg-slate-100 dark:border-slate-700",
         ghost:
           "bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400 date-[state-open]:bg-transparent dark:date-[state-open]:bg-transparent",
         link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
@@ -32,16 +32,14 @@ export const buttonVariants = cva(
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, variant, isLoading, ...props }, ref) => {
+  ({ className, children, variant, isLoading, size, ...props }, ref) => {
     return (
       <button
-        className={cn({
-          inputs: [buttonVariants({ variant, size: props.size, className })],
-        })}
+        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         disabled={isLoading}
         {...props}

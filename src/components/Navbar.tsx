@@ -1,13 +1,11 @@
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import { FC } from "react";
 import { buttonVariants } from "@/ui/Button";
 import SignOutButton from "@/components/SignOutButton";
 import SignInButton from "@/components/SignInButton";
+import ThemeToggle from "./ThemeToggle";
 
-interface NavbarProps {}
-
-const Navbar = async () => {
+const Navbar = async ({}) => {
   const session = await getServerSession();
   function buttonVarients(arg0: { varients: string }): string | undefined {
     throw new Error("Function not implemented.");
@@ -20,10 +18,12 @@ const Navbar = async () => {
           Text Similarity 0.1
         </Link>
 
-        <div className="md:hidden">{/* <ThemeToggle /> */}</div>
+        <div className="md:hidden">
+          <ThemeToggle />
+        </div>
 
         <div className="hidden md:flex gap-4">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           <Link
             href="/documentation"
             className={buttonVariants({ variant: "ghost" })}
