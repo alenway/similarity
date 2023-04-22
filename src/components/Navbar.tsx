@@ -5,11 +5,8 @@ import SignOutButton from "@/components/SignOutButton";
 import SignInButton from "@/components/SignInButton";
 import ThemeToggle from "./ThemeToggle";
 
-const Navbar = async ({}) => {
+const Navbar = async () => {
   const session = await getServerSession();
-  function buttonVarients(arg0: { varients: string }): string | undefined {
-    throw new Error("Function not implemented.");
-  }
 
   return (
     <div className="fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm flex items-center justify-between">
